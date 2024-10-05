@@ -10,7 +10,12 @@ import { getElement } from './src/utils.js';
 
 const init = async () => {
     const products = await fetchProducts()
-    console.log(products)
+    if(products){
+        //adicionar o produto ao carrinho
+        setupStore(products)
+        const featured = store.filter((product)=> product.featured === true)
+        display(featured, getElement('.featured-center'))
+    }
 }
 
 window.addEventListener('DOMContentLoaded', init)
