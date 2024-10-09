@@ -19,7 +19,7 @@ const display = (products, element) => {
         const {id, image, name, price} = product
         return`
         <article class="product">
-           <div class="product-container">
+          <div class="product-container">
             <img src="${image}" alt="${name}" class="product-img img" />
             <!-- product icons -->
             <div class="product-icons">
@@ -33,7 +33,7 @@ const display = (products, element) => {
           </div>
           <footer>
             <p class="product-name">${name}</p>
-            <h4 class="product-price">$ ${price/100}</h4>
+            <h4 class="product-price">${formatPrice(price)}</h4>
           </footer>
         </article>
         `
